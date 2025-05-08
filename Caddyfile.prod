@@ -1,0 +1,5 @@
+seojeong-aprk.art, www.seojeong-aprk.art {
+    # Serve over HTTPS (Caddy automatically handles this)
+    root * /usr/share/caddy
+    file_server
+}
