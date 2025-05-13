@@ -92,7 +92,6 @@ body {
     position: relative;
     height: 35vh;
     width: 80vw;
-    max-width: 1200px; /* Add maximum width */
     min-height: 350px; /* Add minimum height */
     display: flex;
     flex-direction: column;
