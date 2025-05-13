@@ -1,6 +1,6 @@
 :root {
-    --accent-color: #17492d;
-    --bg-color: #17492d;
+    --accent-color: #134327;
+    --bg-color: #134327;
     --bg-light: #addab9;
     --text-color-dark: #323831;
     --text-color-light: #d2ddd5;
@@ -228,7 +228,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--text-color-dark);
     box-shadow: 
     0 0 0 2px var(--accent-color),
