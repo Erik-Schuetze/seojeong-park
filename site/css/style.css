@@ -90,8 +90,10 @@ body {
 
 .hero {
     position: relative;
-    height: 30vh;
+    height: 35vh;
     width: 80vw;
+    max-width: 1200px; /* Add maximum width */
+    min-height: 350px; /* Add minimum height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,6 +264,31 @@ body {
     opacity: 0.8;
 }
 
+.cv-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cv-date {
+    font-weight: 600;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cv-description {
+    position: relative;
+}
+
+.cv-description p {
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* Media queries for mobile */
 @media screen and (max-width: 768px) {
     .navbar {
@@ -280,6 +307,7 @@ body {
     .hero {
         height: 30vh;
         width: 80vw;
+        min-height: 200px;
         padding: 0.3rem;
         box-shadow: 
         0 0 0 2px var(--accent-color),
@@ -327,7 +355,7 @@ body {
 
     .link-box-content {
         border-radius: 18px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         box-shadow: 
         0 0 0 2px var(--accent-color),
         8px 8px 6px var(--shadow-color)
@@ -337,34 +365,7 @@ body {
         width: 70%;
         height: 70%;
     }
-}
 
-.cv-item {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.cv-date {
-    font-weight: 600;
-    color: var(--accent-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.cv-description {
-    position: relative;
-}
-
-.cv-description p {
-    margin: 0;
-    line-height: 1.5;
-}
-
-@media screen and (max-width: 768px) {
     .cv-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
