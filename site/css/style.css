@@ -1,9 +1,10 @@
 :root {
-    --primary-color: #0b162a;
-    --accent-color: #174929;
-    --bg-color: #acd0ac;
-    --bg-light: #f1eae0;
-    --text-color: #323831;
+    --accent-color: #17492d;
+    --bg-color: #17492d;
+    --bg-light: #addab9;
+    --text-color-dark: #323831;
+    --text-color-light: #d2ddd5;
+    --shadow-color: rgba(3, 9, 5, 0.6);
 }
 
 * {
@@ -15,7 +16,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--text-color-dark);
     background-color: var(--bg-color);
     padding-top: 4rem; /* Adjust this value based on your navbar height */
 }
@@ -30,12 +31,6 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    background: linear-gradient(to bottom, 
-        var(--accent-color) 0%,
-        rgba(23, 73, 41, 0.8) 30%,
-        rgba(23, 73, 41, 0) 100%);
 }
 
 .nav-links {
@@ -46,48 +41,47 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--bg-light);
+    color: var(--text-color-light);
     transition: color 0.3s ease;
     font-size: clamp(0.9rem, 2.5vw, 1.2rem);  /* Responsive font size */
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .nav-links a:hover {
-    color: var(--bg-color);
+    color: var(--bg-light);
 }
 
 .nav-brand {
     font-size: clamp(1.1rem, 3vw, 1.5rem);  /* Responsive font size */
-    font-weight: 800;
+    font-weight: 700;
     font-style: italic;
-    color: var(--bg-light);
+    color: var(--text-color-light);
 }
+
+.startpage-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 80vh;
+    padding: 0;
+} 
 
 .hero-container {
     position: relative;
-    height: 75vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2rem;
-    
-}
-
-.hero-shadow {
-    position: absolute;
-    height: 35vh;
-    width: 50vw;
-    background-color: var(--accent-color);
-    transform: translate(12px, 12px);
-    z-index: 1;
 }
 
 .hero {
     position: relative;
-    height: 35vh;
-    width: 50vw;
+    height: 30vh;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,26 +89,24 @@ body {
     text-align: center;
     padding: 2rem;
     background-color: var(--bg-light);
+    border-radius: 24px;
+    box-shadow: 
+        0 0 0 2px var(--accent-color),
+        8px 8px 6px var(--shadow-color);
     z-index: 2;
-    box-shadow: 0 0 0 2px var(--accent-color);
-    
 }
 
 .hero h1 {
-    font-size: clamp(1.6rem, 4.6vw, 3.8rem);
+    font-size: clamp(1.7rem, 4.8vw, 4rem);
     margin-bottom: 1rem;
-    
+    margin-top: 1rem;
 }
 
 .hero .subtitle {
-    font-size: clamp(0.9rem, 2.5vw, 2rem);
+    font-size: clamp(0.9rem, 2.1vw, 1.7rem);
+    opacity: 0.9;
     margin-bottom: 2rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.hero .subtitle:last-of-type {
-    font-size: clamp(0.7rem, 2vw, 1.6rem);
-    opacity: 0.9;
 }
 
 .cta-buttons .btn {
@@ -129,81 +121,6 @@ body {
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s ease;
-}
-
-#resume-box {
-    bottom: 3rem;
-    left: 3rem;
-    animation: float 3s ease-in-out infinite;
-}
-#mail-box {
-    bottom: 3rem;
-    right: 5rem;
-    animation: float 3.5s ease-in-out infinite;
-}
-#instagram-box {
-    bottom: 6rem;
-    left: 25vw;
-    animation: float 4s ease-in-out infinite;
-}
-#about-box {
-    bottom: 2rem;
-    right: 35vw;
-    animation: float 2.8s ease-in-out infinite;
-}
-
-.floating-box {
-    position: fixed;
-    text-decoration: none;
-    z-index: 10;
-}
-
-.floating-box-shadow {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background-color: var(--accent-color);
-    transform: translate(8px, 8px);
-    z-index: 1;
-}
-
-.floating-box-content {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background-color: var(--bg-light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    box-shadow: 0 0 0 2px var(--accent-color);
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-.floating-box-icon {
-    width: 100px;
-    height: 100px;
-    margin-top: 0.1rem;
-    opacity: 1;
-}
-
-.floating-box:hover .floating-box-content {
-    transform: translate(-2px, -2px);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
 }
 
 .about-layout {
@@ -277,14 +194,14 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: var(--text-color-dark);
 }
 
 .subsection-heading {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(1.2rem, 2vw, 1.6rem);
     margin: 2rem 0 1rem;
-    color: var(--primary-color);
+    color: var(--text-color-dark);
 }
 
 .content p {
@@ -300,7 +217,52 @@ body {
     opacity: 0.8;
 }
 
-/* Add media query for mobile devices */
+/* Add new styles for the link boxes row */
+.link-box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 0;
+    width: 80vw;
+}
+
+.link-box {
+    position: relative;
+    text-decoration: none;
+    width: 15vw;
+    aspect-ratio: 1;
+    max-width: 300px;
+}
+
+.link-box-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-light);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--text-color-dark);
+    box-shadow: 
+    0 0 0 2px var(--accent-color),
+    8px 8px 6px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.link-box:hover .link-box-content {
+    transform: translate(-2px, -2px);
+}
+
+.link-box-icon {
+    width: 8vw;
+    aspect-ratio: 1;
+    opacity: 0.8;
+}
+
+/* Media queries for mobile */
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 0.5rem 1rem;  /* Reduced padding on mobile */
@@ -312,67 +274,16 @@ body {
 
     /* Adjust hero position */
     .hero-container {
-        height: 60vh;  /* Move hero up by 10% */
+        height: 50vh;  /* Move hero up by 10% */
     }
 
     .hero {
-        height: 37vh;
+        height: 30vh;
         width: 80vw;
-        padding: 0.5rem;
-    }
-
-    .hero-shadow {
-        height: 37vh;
-        width: 80vw;
-    }
-
-    /* Scale down floating boxes */
-    .floating-box-shadow,
-    .floating-box-content {
-        width: 70px;  
-        height: 70px;
-    }
-
-    .floating-box-icon {
-        width: 60px;
-        height: 60px;
-        margin-top: 0.1rem;
-        opacity: 1;
-    }
-
-    .floating-box-content {
-        font-size: 0.7rem;
-    }
-
-    /* Adjust floating box positions for mobile */
-    #resume-box {
-        bottom: 2rem;
-        left: 1rem;
-    }
-    #mail-box {
-        bottom: 4rem;
-        right: 1rem;
-    }
-    #instagram-box {
-        bottom: 5rem;
-        left: 6.8rem;
-    }
-    #about-box {
-        bottom: 2.5rem;
-        right: 7rem;
-    }
-
-    /* Reduce float animation distance */
-    @keyframes float {
-        0% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-8px); 
-        }
-        100% {
-            transform: translateY(0px);
-        }
+        padding: 0.3rem;
+        box-shadow: 
+        0 0 0 2px var(--accent-color),
+        8px 8px 6px var(--shadow-color)
     }
 
     .about-layout {
@@ -402,5 +313,28 @@ body {
     .hero-icon {
         width: 32px;
         height: 32px;
+        margin-bottom: 1rem;
+    }
+
+    .link-box-container {
+        margin-bottom: 4rem;
+    }
+
+    .link-box {
+        width: calc(30% - 1rem);
+        max-width: 140px;
+    }
+
+    .link-box-content {
+        border-radius: 18px;
+        font-size: 0.8rem;
+        box-shadow: 
+        0 0 0 2px var(--accent-color),
+        8px 8px 6px var(--shadow-color)
+    }
+
+    .link-box-icon {
+        width: 70%;
+        height: 70%;
     }
 }
