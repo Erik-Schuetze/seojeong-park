@@ -59,6 +59,15 @@ body {
     color: var(--text-color-light);
 }
 
+.nav-brand a {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+.nav-brand a:hover {
+    color: var(--bg-light);
+}
+
 .startpage-layout {
     display: flex;
     flex-direction: column;
@@ -194,6 +203,13 @@ body {
     margin-bottom: 1rem;
 }
 
+.profile-photo {
+    box-shadow: 
+        0 0 0 12px rgba(173, 218, 185, 0.3),  /* Using --bg-light with opacity */
+        8px 8px 16px rgba(3, 9, 5, 0.3);
+    border-radius: 12px;
+}
+
 .hero-icon {
     width: 48px;
     height: 48px;
@@ -320,5 +336,42 @@ body {
     .link-box-icon {
         width: 70%;
         height: 70%;
+    }
+}
+
+.cv-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cv-date {
+    font-weight: 600;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cv-description {
+    position: relative;
+}
+
+.cv-description p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+    .cv-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .cv-date {
+        font-size: 0.9rem;
+        justify-content: flex-start; /* Align left on mobile when stacked */
     }
 }
