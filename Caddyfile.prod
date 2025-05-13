@@ -1,4 +1,4 @@
-seojeong-aprk.de, www.seojeong-aprk.de {
+seojeong-park.de, www.seojeong-park.de {
     # Serve over HTTPS (Caddy automatically handles this)
     root * /usr/share/caddy
     file_server
